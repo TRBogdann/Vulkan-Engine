@@ -15,4 +15,5 @@ namespace VkEngine {
     inline constexpr uint32_t ENGINE_VK_VERSION = VK_API_VERSION_1_3;
     inline constexpr uint32_t ENGINE_VERSION = VK_MAKE_API_VERSION(0, 0, 1, 0);
     const std::vector<const char*> validationLayers = {"VK_LAYER_KHRONOS_validation"};
+    inline const std::vector<const char*> requiredGPUExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 }
