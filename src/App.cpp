@@ -13,6 +13,7 @@ VkEngine::Application::Application(VkWindow* window, const char *appName, uint32
 
     createVkInstance();
     createVkSurface();
+    this->device = std::make_unique<Device>(instance, surface);
 }
 
 void VkEngine::Application::createVkInstance()
@@ -63,6 +64,8 @@ void VkEngine::Application::createVkSurface()
 
 VkEngine::Application::~Application()
 {
+    device.reset();
+    vkDestroySurfaceKHR(instance, surface, nullptr);
     vkDestroyInstance(this->instance, nullptr);
 }
 
