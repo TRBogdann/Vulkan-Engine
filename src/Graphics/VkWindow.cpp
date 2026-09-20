@@ -30,15 +30,15 @@ VkEngine::VkWindow::VkWindow(const std::string &title, int width, int height)
         throw std::runtime_error("[GLFW Error]: Could not create Window");
     }
 
-    glfwSetKeyCallback(this->window, key_callback);
-    glfwSetCursorPosCallback(this->window, cursor_position_callback);
-    glfwSetMouseButtonCallback(this->window, mouse_button_callback);
-    glfwSetScrollCallback(this->window, scroll_callback);
-    glfwSetWindowCloseCallback(this->window, window_close_callback);
-    glfwSetWindowMaximizeCallback(this->window, window_maximize_callback);
-    glfwSetWindowIconifyCallback(this->window, window_iconify_callback);
-    glfwSetWindowFocusCallback(this->window, window_focus_callback);
-    glfwSetFramebufferSizeCallback(this->window, window_fbsize_callback);
+    glfwSetKeyCallback(this->window, keyCallback);
+    glfwSetCursorPosCallback(this->window, cursorPositionCallback);
+    glfwSetMouseButtonCallback(this->window, mouseButtonCallback);
+    glfwSetScrollCallback(this->window, scrollCallback);
+    glfwSetWindowCloseCallback(this->window, windowCloseCallback);
+    glfwSetWindowMaximizeCallback(this->window, windowMaximizeCallback);
+    glfwSetWindowIconifyCallback(this->window, windowIconifyCallback);
+    glfwSetWindowFocusCallback(this->window, windowFocusCallback);
+    glfwSetFramebufferSizeCallback(this->window, windowFbSizeCallback);
 }
 
 VkEngine::VkWindow::~VkWindow()
