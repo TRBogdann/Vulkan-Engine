@@ -4,13 +4,13 @@
 
 namespace VkEngine
 {
-    void window_fbsize_callback(GLFWwindow *window, int width, int height);
-    void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
-    void cursor_position_callback(GLFWwindow *window, double xpos, double ypos);
-    void mouse_button_callback(GLFWwindow *window, int button, int action,int mods);
-    void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
-    void window_close_callback(GLFWwindow *window);
-    void window_maximize_callback(GLFWwindow *window, int maximized);
-    void window_iconify_callback(GLFWwindow *window, int iconified);
-    void window_focus_callback(GLFWwindow *window, int focused);
+    void windowFbSizeCallback(GLFWwindow *window, int width, int height);
+    void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);
+    void cursorPositionCallback(GLFWwindow *window, double xpos, double ypos);
+    void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods);
+    void scrollCallback(GLFWwindow *window, double xoffset, double yoffset);
+    void windowCloseCallback(GLFWwindow *window);
+    void windowMaximizeCallback(GLFWwindow *window, int maximized);
+    void windowIconifyCallback(GLFWwindow *window, int iconified);
+    void windowFocusCallback(GLFWwindow *window, int focused);
 }
