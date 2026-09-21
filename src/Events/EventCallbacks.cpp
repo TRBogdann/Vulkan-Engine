@@ -2,7 +2,7 @@
 #include "../../include/Events/Event.hpp"
 
 namespace VkEngine {
-    void window_fbsize_callback(GLFWwindow *window, int width, int height)
+    void windowFbSizeCallback(GLFWwindow *window, int width, int height)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return; // User didn't provide any adress so we can't store the event data
@@ -13,7 +13,7 @@ namespace VkEngine {
         event->window.data2 = height;
     }
 
-    void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
+    void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -25,7 +25,7 @@ namespace VkEngine {
         event->key.keysym.mods = mods;
     }
 
-    void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)
+    void cursorPositionCallback(GLFWwindow *window, double xpos, double ypos)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -35,7 +35,7 @@ namespace VkEngine {
         event->motion.y = static_cast<int>(ypos);
     }
 
-    void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
+    void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -45,7 +45,7 @@ namespace VkEngine {
         event->button.state = static_cast<InputState>(action);
     }
 
-    void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
+    void scrollCallback(GLFWwindow *window, double xoffset, double yoffset)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -55,7 +55,7 @@ namespace VkEngine {
         event->wheel.y = static_cast<int>(yoffset);
     }
 
-    void window_close_callback(GLFWwindow *window)
+    void windowCloseCallback(GLFWwindow *window)
     {
         //By default close button has no functionality. Let the event propagate before trying to store the date
         glfwSetWindowShouldClose(window, GLFW_TRUE);
@@ -66,7 +66,7 @@ namespace VkEngine {
         event->window.event = EventType::WindowClosed;
     }
 
-    void window_maximize_callback(GLFWwindow *window, int maximized)
+    void windowMaximizeCallback(GLFWwindow *window, int maximized)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -80,7 +80,7 @@ namespace VkEngine {
         }
     }
 
-    void window_iconify_callback(GLFWwindow *window, int iconified)
+    void windowIconifyCallback(GLFWwindow *window, int iconified)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
@@ -94,7 +94,7 @@ namespace VkEngine {
         }
     }
 
-    void window_focus_callback(GLFWwindow *window, int focused)
+    void windowFocusCallback(GLFWwindow *window, int focused)
     {
         Event *event = (Event *)glfwGetWindowUserPointer(window);
         if(!event) return;
