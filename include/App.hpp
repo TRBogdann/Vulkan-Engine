@@ -10,7 +10,7 @@ public:
     Application(VkWindow* window, const char *appName, uint32_t appVersion = VK_MAKE_API_VERSION(0, 1, 0, 0));
     ~Application();
 
-    Device* getDevice() const { return device.get(); }
+    Device* getDevice() const;
 
 private:
     //Steps for building the app

@@ -114,3 +114,5 @@ void VkEngine::Application::addValidationLayersOnDebug(VkInstanceCreateInfo &cre
     createInfo.enabledLayerCount = static_cast<uint32_t>(VkEngine::validationLayers.size());
     createInfo.ppEnabledLayerNames = VkEngine::validationLayers.data();
 }
+
+VkEngine::Device* VkEngine::Application::getDevice() const { return device.get(); }
