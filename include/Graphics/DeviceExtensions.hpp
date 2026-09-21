@@ -6,6 +6,7 @@
 
 // The ids/indices of the queues used for rendering
 // For now the engine will use a single queue for rendering, will implement multi queue paralelism later
+// Credit https://www.youtube.com/watch?v=Ci_r5YT0NCs
 struct QueueFamilyIndices {
     std::optional<uint32_t> graphicsFamily;
     std::optional<uint32_t> presentFamily;
