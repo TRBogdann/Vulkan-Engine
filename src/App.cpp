@@ -14,6 +14,7 @@ VkEngine::Application::Application(VkWindow* window, const char *appName, uint32
     createVkInstance();
     createVkSurface();
     this->device = std::make_unique<Device>(instance, surface);
+    this->swapChain = std::make_unique<SwapChain>(device.get(), surface, window);
 }
 
 void VkEngine::Application::createVkInstance()
@@ -64,6 +65,7 @@ void VkEngine::Application::createVkSurface()
 
 VkEngine::Application::~Application()
 {
+    swapChain.reset();
     device.reset();
     vkDestroySurfaceKHR(instance, surface, nullptr);
     vkDestroyInstance(this->instance, nullptr);
@@ -116,3 +118,4 @@ void VkEngine::Application::addValidationLayersOnDebug(VkInstanceCreateInfo &cre
 }
 
 VkEngine::Device* VkEngine::Application::getDevice() const { return device.get(); }
+VkEngine::SwapChain* VkEngine::Application::getSwapChain() const { return swapChain.get(); }
