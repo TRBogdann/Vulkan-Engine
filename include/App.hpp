@@ -2,6 +2,7 @@
 #include "../include/Constants/EngineConstants.hpp"
 #include "./Graphics/VkWindow.hpp"
 #include "./Graphics/Device.hpp"
+#include "./Graphics/SwapChain.hpp"
 #include <memory>
 
 namespace VkEngine {
@@ -11,6 +12,7 @@ public:
     ~Application();
 
     Device* getDevice() const;
+    SwapChain* getSwapChain() const;
 
 private:
     //Steps for building the app
@@ -24,6 +26,7 @@ private:
     VkSurfaceKHR surface = VK_NULL_HANDLE;
     VkWindow* window = nullptr;
     std::unique_ptr<Device> device;
+    std::unique_ptr<SwapChain> swapChain;
     const char *appName = nullptr;
     uint32_t appVersion;
 };
