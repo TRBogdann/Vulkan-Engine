@@ -172,7 +172,7 @@ void VkEngine::Device::createLogicalDevice()
     vkGetDeviceQueue(this->device, this->queueFamilyIndices.presentFamily.value(), 0, &this->presentQueue);
 }
 
-QueueFamilyIndices VkEngine::Device::findQueueFamilies(VkPhysicalDevice physDevice) const
+VkEngine::QueueFamilyIndices VkEngine::Device::findQueueFamilies(VkPhysicalDevice physDevice) const
 {
     QueueFamilyIndices indices;
 
@@ -207,7 +207,7 @@ QueueFamilyIndices VkEngine::Device::findQueueFamilies(VkPhysicalDevice physDevi
     return indices;
 }
 
-SwapChainSupportDetails VkEngine::Device::querySwapChainSupport(VkPhysicalDevice physDevice) const
+VkEngine::SwapChainSupportDetails VkEngine::Device::querySwapChainSupport(VkPhysicalDevice physDevice) const
 {
     SwapChainSupportDetails details;
 
